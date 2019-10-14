@@ -1,0 +1,40 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+        @*@using (Html.BeginForm(FormMethod.Post))
+        {
+
+            @Html.LabelFor(m => m.Name)
+
+            @Html.EditorFor(m => m.Name)
+
+            @Html.ValidationMessageFor(m => m.Name)
+
+            <input type="submit" value="Submit" />
+        }*@
+
+        <form asp-action="Create" asp-controller="Users"> 
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                @Html.EditorFor(m => m.Name)
+                @*<input asp-for="Name" class="form-control" />*@
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
