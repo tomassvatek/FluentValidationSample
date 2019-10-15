@@ -1,18 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.EntityFrameworkCore;
-using MvcLocalization.Models;
 using FluentValidation.AspNetCore;
 using MvcLocalization.Validators;
 using Microsoft.Extensions.Localization;
+using MvcLocalization.Middleware;
 
 namespace MvcLocalization
 {
@@ -30,38 +22,83 @@ namespace MvcLocalization
         {
             services.AddScoped<ILanguage, Language>();
             services.AddScoped<IStringLocalizer, StringLocalizer>();
-            services.AddControllersWithViews()
+            services.AddMvc()
                 .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<UserValidator>());
 
-            services.AddDbContext<MvcLocalizationContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MvcLocalizationContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-            app.UseHttpsRedirection();
+
+            app.UseDeveloperExceptionPage();
+            app.UseExceptionHandler("/Home/Error");
+
             app.UseStaticFiles();
+            app.UseLanguageMiddleware();
+            app.UseCookiePolicy();
 
-            app.UseRouting();
+            app.UseAuthentication();
 
-            app.UseAuthorization();
+            //            var supportedCultures = new[]
+            //            {
+            //                new CultureInfo("en-US"),
+            //                new CultureInfo("cs")
+            //            };
+            //​
+            //            app.UseRequestLocalization(new RequestLocalizationOptions
+            //            {
+            //                DefaultRequestCulture = new RequestCulture("en-US"),
+            //                // Formatting numbers, dates, etc.
+            //                SupportedCultures = supportedCultures,
+            //                // UI strings that we have localized.
+            //                SupportedUICultures = supportedCultures
+            //            });
 
-            app.UseEndpoints(endpoints =>
+            app.UseMvc(routes =>
             {
-                endpoints.MapControllerRoute(
+                routes.MapRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Home}/{action=Index}/{id?}");
+
+                //routes.MapRoute(
+                //        name: "style",
+                //        template: "style.css",
+                //        defaults: new { controller = "Home", action = "Style" });
+                //    routes.MapRoute(
+                //        name: "categorymenu",
+                //        template: "CategoryMenu/{categoryId}/{languageId}",
+                //        defaults: new { controller = "CategoryMenu", action = "Index", categoryId = "" });
+
+                //    routes.MapRoute(
+                //        name: "files",
+                //        template: "files/{requestedFileName}",
+                //        defaults: new { controller = "File", action = "Index" });
+
+                //    routes.MapRoute(
+                //        name: "filters",
+                //        template: "filters/{action}/{paramId}/{filterValue}",
+                //        defaults: new { controller = "Filter", action = "{action}", paramId = "", filterValue = "" });
+
+                //    routes.MapRoute(
+                //        name: "ajaxForms",
+                //        template: "forms/{controller}/{action}");
+
+                //    routes.MapRoute(
+                //        name: "productDetail",
+                //        template: "{langIsoCode:alpha:minlength(2)}/{productCode:regex(---(.*))}",
+                //        defaults: new { controller = "Home", action = "ProductDetail" });
+
+                //    routes.MapRoute(
+                //        name: "generatedPageUrl",
+                //        template: "{langIsoCode:alpha:minlength(2)}/{generatedUrl:regex(pg_[0-9])}",
+                //        defaults: new { controller = "Home", action = "GeneratedPageUrl" });
+
+                //    // Catch-all route
+                //    routes.MapRoute(
+                //        name: "default",
+                //        template: "{*url}",
+                //        defaults: new { controller = "Home", action = "Index" });
             });
         }
     }

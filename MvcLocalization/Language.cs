@@ -7,6 +7,6 @@
 
     public interface ILanguage
     {
-        public string Code { get; set; }
+        string Code { get; set; }
     }
 }

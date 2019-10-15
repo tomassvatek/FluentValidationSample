@@ -1,36 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Michal\\Source\\Repos\\MvcLocalization\\MvcLocalization\\MvcLocalization.csproj": {}
+    "C:\\Users\\tomas.svatek\\Repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Michal\\Source\\Repos\\MvcLocalization\\MvcLocalization\\MvcLocalization.csproj": {
+    "C:\\Users\\tomas.svatek\\Repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Michal\\Source\\Repos\\MvcLocalization\\MvcLocalization\\MvcLocalization.csproj",
+        "projectUniqueName": "C:\\Users\\tomas.svatek\\Repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj",
         "projectName": "MvcLocalization",
-        "projectPath": "C:\\Users\\Michal\\Source\\Repos\\MvcLocalization\\MvcLocalization\\MvcLocalization.csproj",
-        "packagesPath": "C:\\Users\\Michal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Michal\\Source\\Repos\\MvcLocalization\\MvcLocalization\\obj\\",
+        "projectPath": "C:\\Users\\tomas.svatek\\Repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj",
+        "packagesPath": "C:\\Users\\tomas.svatek\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\tomas.svatek\\Repositories\\FluentValidationSample\\MvcLocalization\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Michal\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\tomas.svatek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.0"
+          "netcoreapp2.2"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.0": {
+          "netcoreapp2.2": {
             "projectReferences": {}
           }
         },
@@ -41,50 +39,39 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.0": {
+        "netcoreapp2.2": {
           "dependencies": {
             "FluentValidation.AspNetCore": {
               "target": "Package",
               "version": "[8.5.0, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[3.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "Microsoft.AspNetCore.App": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[2.2.0, )",
+              "autoReferenced": true
             },
-            "Microsoft.Extensions.Logging.Debug": {
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.0.0, )"
+              "version": "[2.2.3, )"
             }
           },
           "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
+            "net461"
           ],
           "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "warn": true
         }
       }
     }

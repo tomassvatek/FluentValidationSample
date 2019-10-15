@@ -14,7 +14,7 @@ namespace MvcLocalization.Controllers
         //private readonly MvcLocalizationContext _context;
         private readonly ILanguage _lang;
 
-        public UsersController(MvcLocalizationContext context, ILanguage lang)
+        public UsersController(ILanguage lang)
         {
             //_context = context;
             _lang = lang;
