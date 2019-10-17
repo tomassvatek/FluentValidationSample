@@ -23,7 +23,7 @@ namespace MvcLocalization.Controllers
         // GET: Users
         public async Task<IActionResult> Index()
         {
-            return View(new User[0]/* await _context.User.ToListAsync()*/);
+            return View(new User[0]);
         }
 
         // GET: Users/Details/5
@@ -33,14 +33,6 @@ namespace MvcLocalization.Controllers
             {
                 return NotFound();
             }
-
-            //var user = await _context.User
-            //    .FirstOrDefaultAsync(m => m.Id == id);
-            //if (user == null)
-            //{
-            //    return NotFound();
-            //}
-
             return View(new User());
         }
 
@@ -61,8 +53,6 @@ namespace MvcLocalization.Controllers
             _lang.Code = "EN";
             if (ModelState.IsValid)
             {
-                //_context.Add(user);
-                //await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(user);
@@ -75,13 +65,6 @@ namespace MvcLocalization.Controllers
             {
                 return NotFound();
             }
-
-            //var user = await _context.User.FindAsync(id);
-            //if (user == null)
-            //{
-            //    return NotFound();
-            //}
-            //return View(user);
 
             return View(new User());
         }
@@ -129,14 +112,6 @@ namespace MvcLocalization.Controllers
                 return NotFound();
             }
 
-            //var user = await _context.User
-            //    .FirstOrDefaultAsync(m => m.Id == id);
-            //if (user == null)
-            //{
-            //    return NotFound();
-            //}
-
-            //return View(user);
             return View();
         }
 
@@ -145,15 +120,12 @@ namespace MvcLocalization.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            //var user = await _context.User.FindAsync(id);
-            //_context.User.Remove(user);
-            //await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserExists(long id)
         {
-            return false;// _context.User.Any(e => e.Id == id);
+            return false;
         }
     }
 }

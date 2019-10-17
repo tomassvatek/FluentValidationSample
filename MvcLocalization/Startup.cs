@@ -40,65 +40,11 @@ namespace MvcLocalization
 
             app.UseAuthentication();
 
-            //            var supportedCultures = new[]
-            //            {
-            //                new CultureInfo("en-US"),
-            //                new CultureInfo("cs")
-            //            };
-            //​
-            //            app.UseRequestLocalization(new RequestLocalizationOptions
-            //            {
-            //                DefaultRequestCulture = new RequestCulture("en-US"),
-            //                // Formatting numbers, dates, etc.
-            //                SupportedCultures = supportedCultures,
-            //                // UI strings that we have localized.
-            //                SupportedUICultures = supportedCultures
-            //            });
-
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-
-                //routes.MapRoute(
-                //        name: "style",
-                //        template: "style.css",
-                //        defaults: new { controller = "Home", action = "Style" });
-                //    routes.MapRoute(
-                //        name: "categorymenu",
-                //        template: "CategoryMenu/{categoryId}/{languageId}",
-                //        defaults: new { controller = "CategoryMenu", action = "Index", categoryId = "" });
-
-                //    routes.MapRoute(
-                //        name: "files",
-                //        template: "files/{requestedFileName}",
-                //        defaults: new { controller = "File", action = "Index" });
-
-                //    routes.MapRoute(
-                //        name: "filters",
-                //        template: "filters/{action}/{paramId}/{filterValue}",
-                //        defaults: new { controller = "Filter", action = "{action}", paramId = "", filterValue = "" });
-
-                //    routes.MapRoute(
-                //        name: "ajaxForms",
-                //        template: "forms/{controller}/{action}");
-
-                //    routes.MapRoute(
-                //        name: "productDetail",
-                //        template: "{langIsoCode:alpha:minlength(2)}/{productCode:regex(---(.*))}",
-                //        defaults: new { controller = "Home", action = "ProductDetail" });
-
-                //    routes.MapRoute(
-                //        name: "generatedPageUrl",
-                //        template: "{langIsoCode:alpha:minlength(2)}/{generatedUrl:regex(pg_[0-9])}",
-                //        defaults: new { controller = "Home", action = "GeneratedPageUrl" });
-
-                //    // Catch-all route
-                //    routes.MapRoute(
-                //        name: "default",
-                //        template: "{*url}",
-                //        defaults: new { controller = "Home", action = "Index" });
             });
         }
     }

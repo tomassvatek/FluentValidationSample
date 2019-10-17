@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tomas.svatek\\Repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj": {}
+    "C:\\Users\\tomas.svatek\\repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tomas.svatek\\Repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj": {
+    "C:\\Users\\tomas.svatek\\repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tomas.svatek\\Repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj",
+        "projectUniqueName": "C:\\Users\\tomas.svatek\\repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj",
         "projectName": "MvcLocalization",
-        "projectPath": "C:\\Users\\tomas.svatek\\Repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj",
+        "projectPath": "C:\\Users\\tomas.svatek\\repositories\\FluentValidationSample\\MvcLocalization\\MvcLocalization.csproj",
         "packagesPath": "C:\\Users\\tomas.svatek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tomas.svatek\\Repositories\\FluentValidationSample\\MvcLocalization\\obj\\",
+        "outputPath": "C:\\Users\\tomas.svatek\\repositories\\FluentValidationSample\\MvcLocalization\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

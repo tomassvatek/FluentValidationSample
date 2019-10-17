@@ -31,3 +31,4 @@ C:\Users\tomas.svatek\Repositories\FluentValidationSample\MvcLocalization\obj\De
 C:\Users\tomas.svatek\Repositories\FluentValidationSample\MvcLocalization\obj\Debug\netcoreapp2.2\MvcLocalization.dll
 C:\Users\tomas.svatek\Repositories\FluentValidationSample\MvcLocalization\obj\Debug\netcoreapp2.2\MvcLocalization.pdb
 C:\Users\tomas.svatek\Repositories\FluentValidationSample\MvcLocalization\obj\Debug\netcoreapp2.2\MvcLocalization.csproj.CopyComplete
+C:\Users\tomas.svatek\Repositories\FluentValidationSample\MvcLocalization\obj\Debug\netcoreapp2.2\MvcLocalization.csprojAssemblyReference.cache
